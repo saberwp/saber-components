@@ -17,6 +17,10 @@ class Plugin {
 
 		add_action('init', function() {
 
+			// Load parsing class.
+			require_once( SABER_COMPONENTS_PATH . '/inc/ComponentParser.php' );
+
+			// Register post type.
 			require_once( SABER_COMPONENTS_PATH . '/inc/ComponentPostType.php' );
 			$cpt = new ComponentPostType;
 			$cpt->register();
@@ -30,6 +34,17 @@ class Plugin {
 		add_action('init', function() {
 			$this->process_classes_and_store_json();
 		});
+
+		/* Register block types. */
+		add_action( 'init', function() {
+
+			// Quote
+			$result = register_block_type( SABER_COMPONENTS_PATH . '/blocks/quote' );
+
+		});
+
+		// Register fields for blocks.
+		require_once SABER_COMPONENTS_PATH . '/blocks/quote/fields.php';
 
 
 	}

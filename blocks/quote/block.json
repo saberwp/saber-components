@@ -1,0 +1,18 @@
+{
+  "name": "saber-components/quote",
+  "title": "Quote SC",
+  "description": "Render a quotation.",
+  "category": "widgets",
+  "icon": "format-quote",
+  "keywords": [
+    "quote",
+    "blockquote"
+  ],
+  "supports": {
+    "align": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php"
+  }
+}
